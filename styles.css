@@ -1,0 +1,7 @@
+#calcContainer{
+    display: flex;
+    height: 800px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+}
