@@ -48,5 +48,10 @@ button {
     width: 24%;
     height: 100px;
     font-size: 40px;
+    border-radius: 25px;
+    margin: 1px;
 }
 
+#zero {
+    width: 49%;
+}
