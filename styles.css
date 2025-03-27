@@ -16,7 +16,7 @@ body {
     display: flex;
     width: 500px;
     height: 600px;
-    border: 5px solid rgb(70, 70, 70);
+    border: 10px solid rgb(70, 70, 70);
     flex-wrap: wrap;
     background-color: black;
   }
@@ -38,7 +38,7 @@ body {
 }
 
 .operand, #decimal {
-    background-color: #0047AB;
+    background-color: #024cb7;
     color: white;
 }
 
