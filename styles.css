@@ -42,6 +42,10 @@ body {
     color: white;
 }
 
+.operand:active, #decimal:active {
+    background-color: #023986;
+}
+
 .operator {
     background-color: #bc5b3d;
     color: white;
@@ -54,6 +58,10 @@ body {
 .clear, .sign, .percent {
     background-color: #095d4c;
     color: white;
+}
+
+.clear:active, .sign:active, .percent:active {
+    background-color: #06382e;
 }
 
 #firstRow {
