@@ -47,6 +47,10 @@ body {
     color: white;
 }
 
+.operator:active {
+    background-color: #7c3c28
+}
+
 .clear, .sign, .percent {
     background-color: #095d4c;
     color: white;

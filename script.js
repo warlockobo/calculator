@@ -1,0 +1,1 @@
+const operand = document.querySelectorAll(".operand");
