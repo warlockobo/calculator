@@ -3,6 +3,7 @@ const numbers = document.querySelectorAll(".operand");
 const display = document.querySelector("#display");
 const clearButton = document.querySelector(".clear");
 const operators = document.querySelectorAll(".operator");
+const equalButton = document.querySelector(".equals");
 let step = 1;
 let input1;
 let input2;
@@ -47,9 +48,10 @@ clearButton.addEventListener("click", () => {
     step = 1;
 });
 
-function operate() {
+equalButton.addEventListener("click", () => {
 
-}
+})
+
 
 function add(){
     result = input1 + input2;
