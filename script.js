@@ -15,20 +15,23 @@ let operator2;
 for (let i=0; i<numbers.length; i++){
     let number = numbers[i];
     number.addEventListener('click' , () => {
-        if (display.innerHTML === "0") {
-            display.innerHTML = number.innerHTML;
+        if (display.innerHTML.length >= 12){
+            alert("You can't add more than 12 numbers. Sorry!");
         }
         else {
-            display.innerHTML += number.innerHTML;
-        }
-        if (step === 1){
-        input1 = +display.innerHTML;
-        }
-        else {
-        input2 = +display.innerHTML;
-        }
-        console.log(input1);
-        console.log(input2);
+            if (display.innerHTML === "0") {
+                display.innerHTML = number.innerHTML;
+            }
+            else {
+                display.innerHTML += number.innerHTML;
+            }
+            if (step === 1){
+            input1 = +display.innerHTML;
+            }
+            else {
+            input2 = +display.innerHTML;
+            }
+    }
     }
 )};
 
@@ -67,6 +70,10 @@ clearButton.addEventListener("click", () => {
 equalButton.addEventListener("click", calculate);
 
 function calculate(){
+    if (operator2 == "/" && input2 == ("0")){
+        alert("Thought you were being clever huh?");
+    }
+    else {
     switch(operator2){
         case "+":
             result = input1 + input2;
@@ -82,7 +89,9 @@ function calculate(){
             break;
     }
     step = 1;
+    result = result.toFixed(2);
     display.innerHTML = result;
     input1 = result;
+}
 }
 
