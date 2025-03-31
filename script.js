@@ -42,7 +42,11 @@ for (let i=0; i<numbers.length; i++){
                 }
         }
         else  {
+            console.log(number);
+            let pressedNumber = number.innerHTML;
             clear();
+            input1 = pressedNumber;
+            display.innerHTML = pressedNumber;
         }
     }
 )};
