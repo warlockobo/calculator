@@ -4,6 +4,7 @@ const display = document.querySelector("#display");
 const clearButton = document.querySelector(".clear");
 const operators = document.querySelectorAll(".operator");
 const equalButton = document.querySelector(".equals");
+const decimal = document.querySelector("#decimal");
 let step = 1;
 let input1;
 let input2;
@@ -30,6 +31,15 @@ for (let i=0; i<numbers.length; i++){
         console.log(input2);
     }
 )};
+
+decimal.addEventListener('click', () => {
+    if (display.innerHTML.includes(".")){
+        alert("You can't have more than one decimal!");
+    }
+    else {
+        display.innerHTML += ".";
+    }
+});
 
 for (let i=0; i<operators.length; i++){
     let operator1 = operators[i];
