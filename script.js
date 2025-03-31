@@ -20,7 +20,10 @@ for (let i=0; i<numbers.length; i++){
     let number = numbers[i];
     number.addEventListener('click' , () => {
         if (solved == 0){
-
+            if (display.innerHTML.length >= 12){
+                alert("You can't enter more than 12 digits, sorry!");
+                }
+            else {
                     if (display.innerHTML === "0") {
                         display.innerHTML = number.innerHTML;
                     }
@@ -35,7 +38,7 @@ for (let i=0; i<numbers.length; i++){
                     else {
                     input2 = +display.innerHTML;
                     }
-
+                }
         }
         else  {
             clear();
@@ -122,6 +125,7 @@ function calculate(){
     if (result.toString().length >= 12){
         result = result.toExponential();
         alert("My poor little calculator can't handle numbers this big :(");
+        display.style.fontSize = '45px';
     }
     console.log(result);
     display.innerHTML = result;
