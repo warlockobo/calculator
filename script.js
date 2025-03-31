@@ -8,7 +8,7 @@ let step = 1;
 let input1;
 let input2;
 let result;
-
+let operator2;
 
 
 for (let i=0; i<numbers.length; i++){
@@ -32,12 +32,18 @@ for (let i=0; i<numbers.length; i++){
 )};
 
 for (let i=0; i<operators.length; i++){
-    let operator = operators[i];
-    operator.addEventListener('click', () => {
-        display.innerHTML = 0;
-        step = 2;
-        console.log(operator);
-        console.log(step);
+    let operator1 = operators[i];
+    operator1.addEventListener('click', () => {
+        console.log(result);
+        if (step == 2){
+            calculate();
+        }
+        else {
+            display.innerHTML = 0;
+            step = 2;
+            operator2 = operator1.innerHTML;
+        }
+
     }) 
 }
 
@@ -48,23 +54,25 @@ clearButton.addEventListener("click", () => {
     step = 1;
 });
 
-equalButton.addEventListener("click", () => {
+equalButton.addEventListener("click", calculate);
 
-})
-
-
-function add(){
-    result = input1 + input2;
+function calculate(){
+    switch(operator2){
+        case "+":
+            result = input1 + input2;
+            break;
+        case "-":
+            result = input1 - input2;
+            break;
+        case "*":
+            result = input1 * input2;
+            break;
+        case "/":
+            result = input1 / input2;
+            break;
+    }
+    step = 1;
+    display.innerHTML = result;
+    input1 = result;
 }
 
-function multiply(){
-    result = input1 * input2;
-}
-
-function subtract(){
-    result = input1 - input2;
-}
-
-function divide(){
-    result = input1 / input2;
-}

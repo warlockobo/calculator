@@ -55,6 +55,16 @@ body {
     background-color: #7c3c28
 }
 
+.equals {
+    background-color: #bc5b3d;
+    color: white;
+}
+
+.equals:active {
+    background-color: #7c3c28;
+    color: white;
+}
+
 .clear, .sign, .percent {
     background-color: #095d4c;
     color: white;
