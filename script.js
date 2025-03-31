@@ -6,6 +6,7 @@ const equalButton = document.querySelector(".equals");
 const decimal = document.querySelector("#decimal");
 const sign = document.querySelector(".sign");
 const percent = document.querySelector(".percent");
+const backspace = document.querySelector("#backspace");
 
 let step = 1;
 let input1;
@@ -45,6 +46,17 @@ for (let i=0; i<numbers.length; i++){
         }
     }
 )};
+
+backspace.addEventListener('click', () => {
+    display.innerHTML = display.innerHTML.slice(0, display.innerHTML.length -1);
+    if (step === 1){
+        input1 = +display.innerHTML;
+
+        }
+        else {
+        input2 = +display.innerHTML;
+        }
+});
 
 decimal.addEventListener('click', () => {
     if (display.innerHTML.includes(".")){
@@ -99,6 +111,10 @@ clearButton.addEventListener("click", clear);
 equalButton.addEventListener("click", calculate);
 
 function calculate(){
+    if (!input1 && !input2){
+        alert("Please input a number!");
+        return;
+    }
     input1 = Number(input1);
     input2 = Number(input2);
     if (operator2 == "/" && input2 == ("0")){
@@ -120,14 +136,12 @@ function calculate(){
             break;
     }
     step = 1;
-    console.log(result);
     result = Math.round(result * 100) / 100;
     if (result.toString().length >= 12){
         result = result.toExponential();
         alert("My poor little calculator can't handle numbers this big :(");
         display.style.fontSize = '45px';
     }
-    console.log(result);
     display.innerHTML = result;
     input1 = result;
     solved++;

@@ -66,12 +66,12 @@ body {
     color: white;
 }
 
-.clear, .sign, .percent {
+.clear, .sign, .percent, .backspace {
     background-color: #095d4c;
     color: white;
 }
 
-.clear:active, .sign:active, .percent:active {
+.clear:active, .sign:active, .percent:active, .backspace:active {
     background-color: #06382e;
 }
 
@@ -101,9 +101,4 @@ button {
     font-size: 40px;
     border-radius: 10px;
     border-color: black;
-    margin: 1px;
-}
-
-#zero {
-    width: 49%;
 }
